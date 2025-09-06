@@ -1,0 +1,341 @@
+/* 導覽列 */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+/* 網站整體 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 頂部 */
+header {
+  background: linear-gradient(135deg, #0078d7, #00b4d8);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  animation: slideDown 1.5s ease-out;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 1s;
+}
+
+/* 區塊 */
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+section:nth-child(2) {
+  animation-delay: 1s;
+}
+section:nth-child(3) {
+  animation-delay: 2s;
+}
+
+h2 {
+  color: #0078d7;
+}
+
+/* 按鈕 */
+button {
+  padding: 12px 25px;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: #005fa3;
+  transform: scale(1.05);
+}
+
+/* 按鈕閃光效果 */
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  transform: skewX(-25deg);
+}
+
+button:hover::after {
+  animation: shine 0.8s forwards;
+}
+
+/* 頁尾 */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in;
+}
+
+/* 🔹 動畫 Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shine {
+  from { left: -75%; }
+  to { left: 125%; }
+}
+/* 流動漸層背景 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #111; /* ✅ 字體顏色加深 */
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+/* 星空 canvas */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* ✅ 在背景層 */
+  background: transparent; /* 背景透明，讓漸層顯示 */
+}
+
+/* 頂部 */
+header {
+  background: rgba(0, 120, 215, 0.8);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+  border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  animation: slideDown 1.5s ease-out;
+  font-weight: bold; /* ✅ 字加粗 */
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 1s;
+  font-weight: 600; /* ✅ 字加深 */
+}
+
+/* 區塊 */
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease-out forwards;
+  background: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+section:nth-child(2) {
+  animation-delay: 1s;
+}
+section:nth-child(3) {
+  animation-delay: 2s;
+}
+
+h2 {
+  color: #0078d7;
+  font-weight: 700; /* ✅ 標題更醒目 */
+}
+
+/* 按鈕 */
+button {
+  padding: 12px 25px;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+button:hover {
+  background: #285677;
+  transform: scale(1.05);
+}
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  transform: skewX(-25deg);
+}
+button:hover::after {
+  animation: shine 0.8s forwards;
+}
+
+/* 頁尾 */
+footer {
+  background: rgba(51,51,51,0.9);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in;
+  border-radius: 20px 20px 0 0;
+}
+
+/* 🔹 動畫 Keyframes */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes shine {
+  from { left: -75%; }
+  to { left: 125%; }
+}
+/* 預設隱藏區塊（準備捲動時觸發） */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+/* 當區塊出現在螢幕時套用 */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 也可以給不同方向的動畫 */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* 回到頂部按鈕 */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  background: #0078d7;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: none; /* 預設隱藏 */
+  transition: 0.3s;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  background: #005fa3;
+  transform: scale(1.1);
+}
+
